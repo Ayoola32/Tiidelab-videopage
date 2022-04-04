@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
 
+:root {
+  --primary-background-color: hsl(250, 11%, 11%);
+  --accent-color: hsl(41, 100%, 49%);
+  --primary-text-color: hsl(0, 0%, 100%);
+  --border-color: #222028;
+  --textarea-background-color: hsl(255, 11%, 14%);
+  --secondary-text-color: hsl(58, 19%, 74%);
+  --secondary-background-color: hsl(255, 11%, 14%);
+}
+
+
+
 body, html{
   height: 100%;
 }
@@ -7,7 +19,7 @@ body, html{
 body{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  background-color: #1a191f;
+  background-color: var(--primary-background-color);
 }
 
 
@@ -21,7 +33,7 @@ body{
   right: 0;
   bottom: 0;
   z-index: 99;
-  background-color: rgba(26,25,31,0.75);
+  background-color: var(--primary-background-color);
   opacity: 0;
   pointer-events: none;
   transition: 0.4s ease;
@@ -86,8 +98,8 @@ a:focus {
 
 
 .sign__form {
-  background-color: #1a191f;
-  border: 1px solid #222028;
+  background-color: var(--primary-background-color);
+  border: 1px solid var(--secondary-background-color);
   border-radius: 6px;
   display: flex;
   
@@ -141,7 +153,7 @@ input:focus{
 
 
 .sign__input:focus {
-  border-color: #f9ab00;
+  border-color: var(--accent-color);
 }
 
 
@@ -157,11 +169,11 @@ input:focus{
 /* Checked style */
 
 .con-checkbox a{
-  color: #f9ab00;
+  color: var(--accent-color);
   text-decoration: none;
 }
 .con-checkbox{
-  color: #fff;
+  color: var(--primary-text-color);
   display: block;
   position: relative;
   left: 15px;
@@ -197,8 +209,8 @@ input:focus{
   left: 0;
   height: 18px;
   width: 18px;
-  background-color: #222028; 
-  border: solid 0.5px #f9ab00;
+  background-color: var(--secondary-background-color); 
+  border: solid 0.5px var(--accent-color);
   border-radius: 25%;
   opacity: 0.85;
 
@@ -207,7 +219,7 @@ input:focus{
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color:#222028 ;
+  background-color: var(--secondary-background-color);
   
   
 }
@@ -215,7 +227,7 @@ input:focus{
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
   
-  background-color: #1a191f;
+  background-color: var(--primary-background-color);
 }
 
 
@@ -240,7 +252,7 @@ input:focus{
   top: 3.7px;
   width: 2px;
   height: 5px;
-  border: solid  #f9ab00;
+  border: solid  var(--accent-color);
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -249,94 +261,6 @@ input:focus{
 
 
 
-/* End checked style */
-
-
-
-
-
-
-/* .sign__group--checkbox {
-  width: 100%;
-  text-align: left;
-}
-
-.sign__group--checkbox input:not(:checked),
-.sign__group--checkbox input:checked {
-  position: absolute;
-  left: -9999px;
-}
-
-
-.sign__group--checkbox input:not(:checked) + label,
-.sign__group--checkbox input:checked + label {
-  font-size: 14px;
-  color: #fff;
-  font-weight: normal;
-  position: relative;
-  cursor: pointer;
-  padding-left: 37px;
-  line-height: 22px;
-  margin: 0;
-}
-
-.sign__group--checkbox input:not(:checked) + label a,
-.sign__group--checkbox input:checked + label a {
-  color: #f9ab00;
-}
-.sign__group--checkbox input:not(:checked) + label a:hover,
-.sign__group--checkbox input:checked + label a:hover {
-  color: #f9ab00;
-  text-decoration: underline;
-}
-
-
-.sign__group--checkbox input:not(:checked) + label:before,
-.sign__group--checkbox input:checked + label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 22px;
-  height: 22px;
-  background-color: #222028;
-  border-radius: 6px;
-}
-
-
-.sign__group--checkbox input:not(:checked) + label:after,
-.sign__group--checkbox input:checked + label:after {
-  font-family: 'Ionicons';
-  content: '\f3ff';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 22px;
-  height: 22px;
-  font-size: 24px;
-  line-height: 22px;
-  text-align: center;
-  transition: 0.4s;
-  color: #f9ab00;
-}
-
-.sign__group--checkbox input:not(:checked) + label:after {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.sign__group--checkbox input:checked + label:after {
-  opacity: 1;
-  transform: scale(1);
-}
-.sign__group--checkbox label::-moz-selection {
-  background: transparent;
-  color: #fff;
-}
-.sign__group--checkbox label::selection {
-  background: transparent;
-  color: #fff;
-} */
 
 
 
@@ -351,9 +275,9 @@ input:focus{
   border-radius: 6px;
   background-color: transparent;
   font-size: 14px;
-  color: #fff;
+  color: var(--primary-text-color);
   text-transform: uppercase;
-  border: 2px solid #f9ab00;
+  border: 2px solid var(--accent-color);
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -366,38 +290,38 @@ input:focus{
   height: 46px;
   width: 100%;
   border-radius: 6px;
-  background-color: #222028;
-  font-size: 16px;
-  color: #fff;
+  background-color: var(--secondary-background-color);
+  font-size: 18px;
+  color: var(--primary-text-color);
   border: 2px solid transparent;
   /* position: relative; */
   /* width: 100%; */
   /* color: #fff; */
-  /* padding: 0 20px; */
+  padding-left: 3px;
 }
 
 
 .sign__btn:hover {
-  color: #fff;
-  background-color: rgba(249,171,0,0.05);
+  color: var(--primary-text-color);
+  background-color: var(--secondary-background-color);
 }
 .sign__text {
   margin-top: 15px;
   font-size: 20px;
-  color: #fff;
+  color: var(--primary-text-color);
 }
 
 .sign__text a {
   position: relative;
-  color: #f9ab00;
+  color: var(--accent-color);
 }
 .sign__text a:hover {
-  color: #f9ab00;
+  color: var(--accent-color);
   text-decoration: underline;
 }
 .sign__delimiter {
   font-size: 14px;
-  color: #fff;
+  color: var(--primary-text-color);
   line-height: 100%;
 }
 
@@ -419,11 +343,11 @@ input:focus{
   height: 44px;
   width: calc(33% - 10px);
   border-radius: 6px;
-  color: #fff;
+  color: var(--primary-text-color);
 }
 .sign__social a svg {
   height: auto;
-  fill: #fff;
+  fill: var(--primary-text-color);
   transition: 0.4s;
 }
 .sign__social a.fb {
