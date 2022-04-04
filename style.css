@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
+
+body, html{
+  height: 100%;
+}
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  background-color: #1a191f;
+}
+
+
+
+.body:before {
+  content: '';
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgba(26,25,31,0.75);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease;
+}
+
+.body--active:before {
+  z-index: 99;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+a{
+  transition: 0.4s;
+  transition-property: color, background-color, border-color, opacity;
+}
+
+a:hover,
+a:active,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+
+
+
+
+
+.sign:before{
+  content: '';
+  background: url(./img/wall.jpg) no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+
+
+
+
+
+
+
+
+.sign {
+  display: block;
+  position: relative;
+}
+
+.sign__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+
+.sign__form {
+  background-color: #1a191f;
+  border: 1px solid #222028;
+  border-radius: 6px;
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+.sign__logo {
+  display: block;
+  margin-bottom: 40px;
+}
+.sign__logo a {
+  max-width: 100%;
+  width: auto;
+}
+.sign__logo img {
+  width: 140px;
+}
+
+
+input, select {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  transition: 0.4s;
+}
+
+input:focus{
+  outline: none;
+}
+
+
+/* DEletre */
+
+
+
+
+
+
+
+.sign__input:focus {
+  border-color: #f9ab00;
+}
+
+
+.sign__group {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
+
+
+/* Checked style */
+
+.con-checkbox a{
+  color: #f9ab00;
+  text-decoration: none;
+}
+.con-checkbox{
+  color: #fff;
+  display: block;
+  position: relative;
+  left: 15px;
+
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* width: 100%;
+  text-align: left; */
+
+  
+}
+
+
+.con-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #222028; 
+  border: solid 0.5px #f9ab00;
+  border-radius: 25%;
+  opacity: 0.85;
+
+}
+
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color:#222028 ;
+  
+  
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  
+  background-color: #1a191f;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+  
+}
+
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 5px;
+  top: 3.7px;
+  width: 2px;
+  height: 5px;
+  border: solid  #f9ab00;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
+/* End checked style */
+
+
+
+
+
+
+/* .sign__group--checkbox {
+  width: 100%;
+  text-align: left;
+}
+
+.sign__group--checkbox input:not(:checked),
+.sign__group--checkbox input:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+
+.sign__group--checkbox input:not(:checked) + label,
+.sign__group--checkbox input:checked + label {
+  font-size: 14px;
+  color: #fff;
+  font-weight: normal;
+  position: relative;
+  cursor: pointer;
+  padding-left: 37px;
+  line-height: 22px;
+  margin: 0;
+}
+
+.sign__group--checkbox input:not(:checked) + label a,
+.sign__group--checkbox input:checked + label a {
+  color: #f9ab00;
+}
+.sign__group--checkbox input:not(:checked) + label a:hover,
+.sign__group--checkbox input:checked + label a:hover {
+  color: #f9ab00;
+  text-decoration: underline;
+}
+
+
+.sign__group--checkbox input:not(:checked) + label:before,
+.sign__group--checkbox input:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  background-color: #222028;
+  border-radius: 6px;
+}
+
+
+.sign__group--checkbox input:not(:checked) + label:after,
+.sign__group--checkbox input:checked + label:after {
+  font-family: 'Ionicons';
+  content: '\f3ff';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  font-size: 24px;
+  line-height: 22px;
+  text-align: center;
+  transition: 0.4s;
+  color: #f9ab00;
+}
+
+.sign__group--checkbox input:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.sign__group--checkbox input:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.sign__group--checkbox label::-moz-selection {
+  background: transparent;
+  color: #fff;
+}
+.sign__group--checkbox label::selection {
+  background: transparent;
+  color: #fff;
+} */
+
+
+
+
+.sign__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  width: 100%;
+  border-radius: 6px;
+  background-color: transparent;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 2px solid #f9ab00;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.sign__input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #222028;
+  font-size: 16px;
+  color: #fff;
+  border: 2px solid transparent;
+  /* position: relative; */
+  /* width: 100%; */
+  /* color: #fff; */
+  /* padding: 0 20px; */
+}
+
+
+.sign__btn:hover {
+  color: #fff;
+  background-color: rgba(249,171,0,0.05);
+}
+.sign__text {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.sign__text a {
+  position: relative;
+  color: #f9ab00;
+}
+.sign__text a:hover {
+  color: #f9ab00;
+  text-decoration: underline;
+}
+.sign__delimiter {
+  font-size: 14px;
+  color: #fff;
+  line-height: 100%;
+}
+
+
+.sign__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.sign__social a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: calc(33% - 10px);
+  border-radius: 6px;
+  color: #fff;
+}
+.sign__social a svg {
+  height: auto;
+  fill: #fff;
+  transition: 0.4s;
+}
+.sign__social a.fb {
+  background-color: #3b5999;
+}
+.sign__social a.fb svg {
+  width: 10px;
+}
+.sign__social a.gl {
+  background-color: #df4a32;
+}
+.sign__social a.gl svg {
+  width: 18px;
+}
+.sign__social a.tw {
+  background-color: #1da1f2;
+}
+.sign__social a.tw svg {
+  width: 18px;
+}
+.sign__social a:hover {
+  background-color: #fff;
+}
+.sign__social a:hover.fb svg {
+  fill: #3b5999;
+}
+.sign__social a:hover.gl svg {
+  fill: #df4a32;
+}
+.sign__social a:hover.tw svg {
+  fill: #1da1f2;
+}
+@media (min-width: 576px) {
+  .sign__form {
+    padding: 50px 60px;
+  }
+  .sign__logo {
+    margin-bottom: 50px;
+  }
+}
